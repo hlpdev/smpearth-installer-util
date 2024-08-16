@@ -79,6 +79,10 @@ public static partial class Program {
 
             { // Copy custom .minecraft over to HNT8 dir
                 Logger.Info("Writing modpack contents to disk");
+
+                if (Directory.Exists("C:\\HNT8\\SMPEarth")) {
+                    Directory.Delete("C:\\HNT8\\SMPEarth");
+                }
                 
                 Directory.CreateDirectory("C:\\HNT8\\SMPEarth");
                 File.Copy("SMPEarth.zip", "C:\\HNT8\\SMPEarth\\contents.zip");
